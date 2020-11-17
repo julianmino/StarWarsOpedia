@@ -22,6 +22,7 @@
 		E087AAD623620D0900D1E33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E087AAD523620D0800D1E33E /* Assets.xcassets */; };
 		E087AAD923620E3B00D1E33E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E087AAD723620E3B00D1E33E /* DetailViewController.swift */; };
 		E087AADA23620E3B00D1E33E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E087AAD823620E3B00D1E33E /* MainTableViewController.swift */; };
+		EA3356D925642315006B8FB6 /* FilmsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3356D825642314006B8FB6 /* FilmsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E087AAD523620D0800D1E33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = StarWarsOpedia/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		E087AAD723620E3B00D1E33E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E087AAD823620E3B00D1E33E /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		EA3356D825642314006B8FB6 /* FilmsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				E087AAD823620E3B00D1E33E /* MainTableViewController.swift */,
+				EA3356D825642314006B8FB6 /* FilmsTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				840A99F0255C44850053E4A8 /* MainPresenter.swift in Sources */,
+				EA3356D925642315006B8FB6 /* FilmsTableViewCell.swift in Sources */,
 				8404F585255F07EA000DA4DB /* StarshipsViewModel.swift in Sources */,
 				8404F57F255EE389000DA4DB /* Starship.swift in Sources */,
 				D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */,

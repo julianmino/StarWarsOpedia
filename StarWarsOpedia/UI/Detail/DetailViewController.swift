@@ -27,6 +27,7 @@
 /// THE SOFTWARE.
 
 import UIKit
+import SVProgressHUD
 
 class DetailViewController: UIViewController {
   @IBOutlet weak var titleLabel: UILabel!
@@ -91,12 +92,13 @@ extension DetailViewController: UITableViewDataSource {
 //MARK: - DetailsPresenterDelegate
 
 extension DetailViewController: DetailsPresenterDelegate {
+  
   func onStartService() {
-    listTableView.isHidden = true
+    SVProgressHUD.show()
   }
   
   func onFinishedService() {
-    listTableView.isHidden = false
+    SVProgressHUD.dismiss()
   }
   
   func getDetailsData() {

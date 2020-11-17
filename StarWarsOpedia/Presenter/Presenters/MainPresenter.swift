@@ -45,66 +45,40 @@ class MainPresenter {
   func setDelegate(_ delegate: MainPresenterDelegate?) {
     self.delegate = delegate
   }
-  private var _datasource = [Displayable]() {
-    didSet {
-      delegate?.getMainData()
-    }
-  }
-  var datasource: [Displayable]? {
+  private var _datasource = [Displayable]()
+  var datasource: [Displayable] {
     return _datasource
   }
   
   func fetchFilms(completion: @escaping ([Film]?) -> Void) {
-    var results: [Film]?
     AF.request("https://swapi.dev/api/films").validate().responseDecodable(of: FilmsViewModel.self) { (response) in
-      guard let films = response.value else {
-        return
-      }
-      results = films.all
-      completion(results)
+      completion(response.value?.all)
     }
   }
   
   func searchStarships(for name: String, completion: @escaping ([Starship]?) -> Void) {
-    // 1
     let url = "https://swapi.dev/api/starships"
-    // 2
     let parameters: [String: String] = ["search": name]
-    // 3
     AF.request(url, parameters: parameters).validate().responseDecodable(of: Starships.self) { response in
-        // 4
-        guard let starships = response.value else { return }
-        
-      completion(starships.all)
+      completion(response.value?.all)
     }
   }
   
   func getDatasource() {
     delegate?.onStartService()
-    
-    //Set DataSource
     fetchFilms(completion: { (results) in
-      if let safeResults = results {
-        self._datasource = safeResults
-      }
+      self._datasource = results ?? []
+      self.delegate?.getMainData()
     })
-    
-    
     delegate?.onFinishedService()
-    
   }
   
   func getDataFromSearch(with string:String) {
-    
     delegate?.onStartService()
-    //Set Search Datasource
-    
     searchStarships(for: string) { (starships) in
-      if let safeStarships = starships {
-        self._datasource = safeStarships
-      }
+      self._datasource = starships ?? []
+      self.delegate?.getMainData()
     }
-    
     delegate?.onFinishedService()
   }
 }

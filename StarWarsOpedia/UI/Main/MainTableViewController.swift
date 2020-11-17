@@ -27,57 +27,53 @@
 /// THE SOFTWARE.
 
 import UIKit
+import SVProgressHUD
 
 class MainTableViewController: UITableViewController {
   @IBOutlet weak var searchBar: UISearchBar!
+  
   private var presenter = MainPresenter()
-  private var selectedValue: Displayable?
+
   override func viewDidLoad() {
     super.viewDidLoad()
+    SVProgressHUD.setBackgroundColor(.black)
+    SVProgressHUD.setForegroundColor(.white)
     searchBar.delegate = self
     presenter.setDelegate(self)
     presenter.getDatasource()
   }
   
-  
   //MARK: - UITableViewDelegate, UITableViewDataSource
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return presenter.datasource!.count
+    return presenter.datasource.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell", for: indexPath)
-    let datasource = presenter.datasource![indexPath.row]
-    cell.textLabel?.text = datasource.titleLabelText
-    cell.detailTextLabel?.text = datasource.subtitleLabelText
-    return cell
+    if let cell = tableView.dequeueReusableCell(withIdentifier: "FilmsTableViewCell", for: indexPath) as? FilmsTableViewCell {
+      let item = presenter.datasource[indexPath.row]
+      cell.setup(displayable: item)
+      return cell
+    }
+    return UITableViewCell()
   }
   
-  override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-    if let value = presenter.datasource?[indexPath.row] {
-      switch value {
-      case is Film:
-        selectedValue = value as! Film
-      case is Starship:
-        selectedValue = value as! Starship
-      default:
-        return nil
-      }
-    }
-    return indexPath
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let item = presenter.datasource[indexPath.row]
+    performSegue(withIdentifier: "showDetail", sender: item)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    guard let destinationVC = segue.destination as? DetailViewController else {
-      return
+    if let destinationVC = segue.destination as? DetailViewController, let item = sender as? Displayable {
+      destinationVC.data = item
     }
-    destinationVC.data = selectedValue
   }
+  
 }
 
 // MARK: - UISearchBarDelegate
 extension MainTableViewController: UISearchBarDelegate {
+  
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     guard let shipName = searchBar.text else { return }
     presenter.getDataFromSearch(with: shipName)
@@ -87,7 +83,6 @@ extension MainTableViewController: UISearchBarDelegate {
     searchBar.text = nil
     searchBar.resignFirstResponder()
     presenter.getDatasource()
-    tableView.reloadData()
   }
 }
 
@@ -96,11 +91,11 @@ extension MainTableViewController: UISearchBarDelegate {
 extension MainTableViewController: MainPresenterDelegate {
   
   func onStartService() {
-    tableView.isHidden = true
+    SVProgressHUD.show()
   }
   
   func onFinishedService() {
-    tableView.isHidden = false
+    SVProgressHUD.dismiss()
   }
   
   func getMainData() {
