@@ -45,12 +45,8 @@ class DetailsPresenter {
   func setDelegate(_ delegate: DetailsPresenterDelegate?) {
     self.delegate = delegate
   }
-  private var _datasource = [Displayable]() {
-    didSet {
-      delegate?.getDetailsData()
-    }
-  }
-  var datasource: [Displayable]? {
+  private var _datasource = [Displayable]()
+  var datasource: [Displayable] {
     return _datasource
   }
     
@@ -89,12 +85,14 @@ class DetailsPresenter {
         fetch(selectedValue.listItems, of: Starship.self) { (starships) in
           if let safeStarships = starships {
             self._datasource = safeStarships
+            self.delegate?.getDetailsData()
           }
         }
       case is Starship:
         fetch(selectedValue.listItems, of: Film.self) { (films) in
           if let safeFilms = films {
             self._datasource = safeFilms
+            self.delegate?.getDetailsData()
           }
         }
       default:

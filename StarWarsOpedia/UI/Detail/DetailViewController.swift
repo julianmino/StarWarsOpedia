@@ -78,15 +78,16 @@ class DetailViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension DetailViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return presenter.datasource?.count ?? 0
+    return presenter.datasource.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
-    cell.textLabel?.text = presenter.datasource?[indexPath.row].titleLabelText
-    cell.detailTextLabel?.text = presenter.datasource?[indexPath.row].subtitleLabelText
+    if let cell = tableView.dequeueReusableCell(withIdentifier: "StarshipsTableViewCell", for: indexPath) as? StarshipsTableViewCell {
+      cell.setup(displayable: presenter.datasource[indexPath.row])
     return cell
   }
+    return StarshipsTableViewCell()
+}
 }
 
 //MARK: - DetailsPresenterDelegate
