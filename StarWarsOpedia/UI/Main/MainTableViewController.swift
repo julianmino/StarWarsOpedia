@@ -34,8 +34,11 @@ class MainTableViewController: UITableViewController {
   
   private var presenter = MainPresenter()
 
+  override func viewWillAppear(_ animated: Bool) {
+  }
   override func viewDidLoad() {
     super.viewDidLoad()
+    tableView.register(UINib(nibName: "StarshipsTableViewCell", bundle: nil), forCellReuseIdentifier: "StarshipCell")
     SVProgressHUD.setBackgroundColor(.black)
     SVProgressHUD.setForegroundColor(.white)
     searchBar.delegate = self
@@ -50,10 +53,18 @@ class MainTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    if presenter.datasource is [Film] {
     if let cell = tableView.dequeueReusableCell(withIdentifier: "FilmsTableViewCell", for: indexPath) as? FilmsTableViewCell {
       let item = presenter.datasource[indexPath.row]
       cell.setup(displayable: item)
       return cell
+    }
+    } else if presenter.datasource is [Starship] {
+      if let cell = tableView.dequeueReusableCell(withIdentifier: "StarshipCell", for: indexPath) as? StarshipsTableViewCell {
+        let item = presenter.datasource[indexPath.row]
+        cell.setup(displayable: item)
+        return cell
+      }
     }
     return UITableViewCell()
   }

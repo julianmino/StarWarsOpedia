@@ -84,10 +84,10 @@ extension DetailViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if let cell = tableView.dequeueReusableCell(withIdentifier: "StarshipsTableViewCell", for: indexPath) as? StarshipsTableViewCell {
       cell.setup(displayable: presenter.datasource[indexPath.row])
-    return cell
+      return cell
+    }
+    return UITableViewCell()
   }
-    return StarshipsTableViewCell()
-}
 }
 
 //MARK: - DetailsPresenterDelegate

@@ -17,6 +17,7 @@
 		840A99FD255C46930053E4A8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A99FC255C46930053E4A8 /* Enums.swift */; };
 		840A9A03255C4FDC0053E4A8 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9A02255C4FDC0053E4A8 /* Film.swift */; };
 		840A9A11255C6CC60053E4A8 /* FilmsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9A10255C6CC60053E4A8 /* FilmsViewModel.swift */; };
+		840F46AA2565624B006D0B16 /* StarshipsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840F46A92565624B006D0B16 /* StarshipsTableViewCell.xib */; };
 		844A299225643405003EB3AE /* StarshipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A299125643405003EB3AE /* StarshipsTableViewCell.swift */; };
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 		840A99FC255C46930053E4A8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		840A9A02255C4FDC0053E4A8 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		840A9A10255C6CC60053E4A8 /* FilmsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmsViewModel.swift; sourceTree = "<group>"; };
+		840F46A92565624B006D0B16 /* StarshipsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipsTableViewCell.xib; sourceTree = "<group>"; };
 		844A299125643405003EB3AE /* StarshipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsTableViewCell.swift; sourceTree = "<group>"; };
 		BE9F74ECC6ADA9E64E221425 /* Pods-StarWarsOpedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsOpedia.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsOpedia/Pods-StarWarsOpedia.debug.xcconfig"; sourceTree = "<group>"; };
 		D2A5F2001F4A9144005CD714 /* StarWarsOpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsOpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				E087AAD823620E3B00D1E33E /* MainTableViewController.swift */,
-				EA3356D825642314006B8FB6 /* FilmsTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -112,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				E087AAD723620E3B00D1E33E /* DetailViewController.swift */,
-				844A299125643405003EB3AE /* StarshipsTableViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -139,6 +139,16 @@
 				840A99F3255C44D40053E4A8 /* DetailsPresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		84CA48452565570D00B43932 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				EA3356D825642314006B8FB6 /* FilmsTableViewCell.swift */,
+				844A299125643405003EB3AE /* StarshipsTableViewCell.swift */,
+				840F46A92565624B006D0B16 /* StarshipsTableViewCell.xib */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		D2A5F1F71F4A9143005CD714 = {
@@ -179,6 +189,7 @@
 		E087AADF23620E5200D1E33E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				84CA48452565570D00B43932 /* CustomCells */,
 				D2A5F2071F4A9144005CD714 /* Main.storyboard */,
 				840A99EC255C43D80053E4A8 /* Main */,
 				840A99ED255C43E90053E4A8 /* Detail */,
@@ -259,6 +270,7 @@
 				5394F02521864DF5006E754C /* LaunchScreen.storyboard in Resources */,
 				E087AAD623620D0900D1E33E /* Assets.xcassets in Resources */,
 				D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */,
+				840F46AA2565624B006D0B16 /* StarshipsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
