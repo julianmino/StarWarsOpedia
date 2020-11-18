@@ -18,6 +18,11 @@
 		840A9A03255C4FDC0053E4A8 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9A02255C4FDC0053E4A8 /* Film.swift */; };
 		840A9A11255C6CC60053E4A8 /* FilmsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A9A10255C6CC60053E4A8 /* FilmsViewModel.swift */; };
 		840F46AA2565624B006D0B16 /* StarshipsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840F46A92565624B006D0B16 /* StarshipsTableViewCell.xib */; };
+		840F46CD25657885006D0B16 /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F46CC25657885006D0B16 /* MainManager.swift */; };
+		840F46D525657BBB006D0B16 /* MainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F46D425657BBB006D0B16 /* MainRequest.swift */; };
+		840F46D825657BC6006D0B16 /* DetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F46D725657BC6006D0B16 /* DetailsRequest.swift */; };
+		840F46DB25657D8D006D0B16 /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F46DA25657D8D006D0B16 /* PathBuilder.swift */; };
+		840F46DE2565842A006D0B16 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F46DD2565842A006D0B16 /* BaseManager.swift */; };
 		844A299225643405003EB3AE /* StarshipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A299125643405003EB3AE /* StarshipsTableViewCell.swift */; };
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
@@ -40,6 +45,11 @@
 		840A9A02255C4FDC0053E4A8 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		840A9A10255C6CC60053E4A8 /* FilmsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmsViewModel.swift; sourceTree = "<group>"; };
 		840F46A92565624B006D0B16 /* StarshipsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipsTableViewCell.xib; sourceTree = "<group>"; };
+		840F46CC25657885006D0B16 /* MainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManager.swift; sourceTree = "<group>"; };
+		840F46D425657BBB006D0B16 /* MainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRequest.swift; sourceTree = "<group>"; };
+		840F46D725657BC6006D0B16 /* DetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRequest.swift; sourceTree = "<group>"; };
+		840F46DA25657D8D006D0B16 /* PathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
+		840F46DD2565842A006D0B16 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
 		844A299125643405003EB3AE /* StarshipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsTableViewCell.swift; sourceTree = "<group>"; };
 		BE9F74ECC6ADA9E64E221425 /* Pods-StarWarsOpedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsOpedia.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsOpedia/Pods-StarWarsOpedia.debug.xcconfig"; sourceTree = "<group>"; };
 		D2A5F2001F4A9144005CD714 /* StarWarsOpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsOpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +77,8 @@
 		18680E9523DF429F00352DF4 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				840F46D325657BA3006D0B16 /* Services */,
+				840F46CB25657870006D0B16 /* Managers */,
 				840A99FA255C45FE0053E4A8 /* Models */,
 				183D953C23DF5A4700845F5F /* Displayable.swift */,
 			);
@@ -139,6 +151,25 @@
 				840A99F3255C44D40053E4A8 /* DetailsPresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		840F46CB25657870006D0B16 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				840F46CC25657885006D0B16 /* MainManager.swift */,
+				840F46DD2565842A006D0B16 /* BaseManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		840F46D325657BA3006D0B16 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				840F46D425657BBB006D0B16 /* MainRequest.swift */,
+				840F46D725657BC6006D0B16 /* DetailsRequest.swift */,
+				840F46DA25657D8D006D0B16 /* PathBuilder.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		84CA48452565570D00B43932 /* CustomCells */ = {
@@ -325,16 +356,21 @@
 			files = (
 				840A99F0255C44850053E4A8 /* MainPresenter.swift in Sources */,
 				844A299225643405003EB3AE /* StarshipsTableViewCell.swift in Sources */,
+				840F46CD25657885006D0B16 /* MainManager.swift in Sources */,
 				EA3356D925642315006B8FB6 /* FilmsTableViewCell.swift in Sources */,
 				8404F585255F07EA000DA4DB /* StarshipsViewModel.swift in Sources */,
 				8404F57F255EE389000DA4DB /* Starship.swift in Sources */,
+				840F46DE2565842A006D0B16 /* BaseManager.swift in Sources */,
 				D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */,
 				E087AADA23620E3B00D1E33E /* MainTableViewController.swift in Sources */,
+				840F46D525657BBB006D0B16 /* MainRequest.swift in Sources */,
 				840A9A11255C6CC60053E4A8 /* FilmsViewModel.swift in Sources */,
 				183D953D23DF5A4700845F5F /* Displayable.swift in Sources */,
 				840A99FD255C46930053E4A8 /* Enums.swift in Sources */,
+				840F46DB25657D8D006D0B16 /* PathBuilder.swift in Sources */,
 				E087AAD923620E3B00D1E33E /* DetailViewController.swift in Sources */,
 				840A9A03255C4FDC0053E4A8 /* Film.swift in Sources */,
+				840F46D825657BC6006D0B16 /* DetailsRequest.swift in Sources */,
 				840A99F4255C44D40053E4A8 /* DetailsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
