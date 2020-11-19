@@ -105,12 +105,18 @@ extension DetailViewController: UITableViewDataSource {
 
 extension DetailViewController: DetailsPresenterDelegate {
   
-  func onStartService() {
+  func showLoadingView() {
     SVProgressHUD.show()
   }
   
-  func onFinishedService() {
+  func hideLoadingView() {
     SVProgressHUD.dismiss()
+  }
+  
+  func onError(_ message: String) {
+    let alertview = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    alertview.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+    navigationController?.present(alertview, animated: true, completion: nil)
   }
   
   func getDetailsData() {

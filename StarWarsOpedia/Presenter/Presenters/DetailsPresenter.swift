@@ -29,18 +29,14 @@
 import Foundation
 import Alamofire
 
-protocol DetailsPresenterDelegate {
-  func onStartService()
-  func onFinishedService()
+protocol DetailsPresenterDelegate: BasePresenterDelegate {
   func getDetailsData()
 }
 class DetailsPresenter {
 
   private var delegate: DetailsPresenterDelegate?
   var selectedValue: Displayable?
-  init() {
-    
-  }
+  
   
   func setDelegate(_ delegate: DetailsPresenterDelegate?) {
     self.delegate = delegate
@@ -51,9 +47,6 @@ class DetailsPresenter {
   }
   
   func getDatasource() {
-    
-    delegate?.onStartService()
-
     if let selectedValue = selectedValue {
       switch selectedValue {
       case is Film:
@@ -61,33 +54,29 @@ class DetailsPresenter {
       case is Starship:
         DetailsManager.sharedInstance.fetch(selectedValue.listItems, of: Film.self, delegate: self)
       default:
-        print("Unknown type: ", String(describing: type(of: selectedValue)))
+        delegate?.onError("Unknown type: \(String(describing: selectedValue))")
       }
-      
     }
-    
-    delegate?.onFinishedService()
   }
 }
 
 extension DetailsPresenter: DetailsManagerDelegate {
-  func onFetchStarships(items: [Displayable]?) {
-    _datasource = items ?? []
-    delegate?.getDetailsData()
-    
-  }
   
   func onStartService() {
-    delegate?.onStartService()
+    delegate?.showLoadingView()
   }
   
   func onFinishedService() {
-    delegate?.onFinishedService()
+    delegate?.hideLoadingView()
   }
   
   func onError(message: String) {
-    print(message)
+    delegate?.onError(message)
   }
   
+  func onFetchStarships(items: [Displayable]) {
+    _datasource = items
+    delegate?.getDetailsData()
+  }
   
 }

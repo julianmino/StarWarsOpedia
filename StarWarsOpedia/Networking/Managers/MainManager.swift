@@ -30,8 +30,8 @@ import Foundation
 import Alamofire
 
 protocol MainManagerDelegate: BaseManagerDelegate {
-  func onFetchFilms(films: [Film]?)
-  func onSearchStarships(starships: [Starship]?)
+  func onFetchFilms(films: [Film])
+  func onSearchStarships(starships: [Starship])
 }
 class MainManager: BaseManager {
   class var sharedInstance: MainManager {
@@ -49,7 +49,7 @@ class MainManager: BaseManager {
       if let error = response.error {
         delegate.onError(message: error.localizedDescription)
       } else {
-        delegate.onFetchFilms(films: response.value?.all)
+        delegate.onFetchFilms(films: response.value?.all ?? [])
       }
       delegate.onFinishedService()
     }
@@ -61,11 +61,10 @@ class MainManager: BaseManager {
     let url = PathBuilder.sharedInstance.getStarshipsPath()
     let parameters: [String: String] = ["search": name]
     AF.request(url, parameters: parameters).validate().responseDecodable(of: StarshipsViewModel.self) { response in
-      
       if let error = response.error {
         delegate.onError(message: error.localizedDescription)
       } else {
-        delegate.onSearchStarships(starships: response.value?.all)
+        delegate.onSearchStarships(starships: response.value?.all ?? [])
       }
       delegate.onFinishedService()
     }
