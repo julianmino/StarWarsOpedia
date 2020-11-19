@@ -82,10 +82,6 @@ extension DetailViewController: UITableViewDataSource {
     return presenter.datasource.count
   }
   
-//  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//    return 60
-//  }
-  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if presenter.datasource is [Starship] {
       if let cell = tableView.dequeueReusableCell(withIdentifier: "StarshipsTableViewCell", for: indexPath) as? StarshipsTableViewCell {

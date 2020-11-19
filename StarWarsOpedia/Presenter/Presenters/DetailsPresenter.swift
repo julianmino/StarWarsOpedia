@@ -53,7 +53,6 @@ class DetailsPresenter {
   func getDatasource() {
     
     delegate?.onStartService()
-    //Set DataSource
 
     if let selectedValue = selectedValue {
       switch selectedValue {

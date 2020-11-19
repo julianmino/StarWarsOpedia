@@ -41,12 +41,6 @@ class MainManager: BaseManager {
     return Static.instance
   }
   
-//  func fetchFilms(completion: @escaping ([Film]?) -> Void) {
-//    AF.request("https://swapi.dev/api/films").validate().responseDecodable(of: FilmsViewModel.self) { (response) in
-//      completion(response.value?.all)
-//    }
-//  }
-  
   func fetchFilms(delegate: MainManagerDelegate) {
     delegate.onStartService()
     
@@ -61,14 +55,6 @@ class MainManager: BaseManager {
       delegate.onFinishedService()
     }
   }
-  
-//  func searchStarships(for name: String, completion: @escaping ([Starship]?) -> Void) {
-//    let url = "https://swapi.dev/api/starships"
-//    let parameters: [String: String] = ["search": name]
-//    AF.request(url, parameters: parameters).validate().responseDecodable(of: Starships.self) { response in
-//      completion(response.value?.all)
-//    }
-//  }
   
   func searchStarships(for name: String, delegate: MainManagerDelegate) {
     delegate.onStartService()
