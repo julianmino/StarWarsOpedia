@@ -47,6 +47,7 @@ class DetailViewController: UIViewController {
   private var presenter = DetailsPresenter()
   override func viewDidLoad() {
     super.viewDidLoad()
+    listTableView.register(UINib(nibName: "FilmsTableViewCell", bundle: nil), forCellReuseIdentifier: "FilmCell")
     commonInit()
     
     listTableView.dataSource = self
@@ -81,10 +82,24 @@ extension DetailViewController: UITableViewDataSource {
     return presenter.datasource.count
   }
   
+//  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//    return 60
+//  }
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if let cell = tableView.dequeueReusableCell(withIdentifier: "StarshipsTableViewCell", for: indexPath) as? StarshipsTableViewCell {
-      cell.setup(displayable: presenter.datasource[indexPath.row])
+    if presenter.datasource is [Starship] {
+      if let cell = tableView.dequeueReusableCell(withIdentifier: "StarshipsTableViewCell", for: indexPath) as? StarshipsTableViewCell {
+      let item = presenter.datasource[indexPath.row]
+      cell.setup(displayable: item)
       return cell
+    }
+    }
+    else if presenter.datasource is [Film] {
+      if let cell = tableView.dequeueReusableCell(withIdentifier: "FilmCell", for: indexPath) as? FilmsTableViewCell {
+        let item = presenter.datasource[indexPath.row]
+        cell.setup(displayable: item)
+        return cell
+      }
     }
     return UITableViewCell()
   }

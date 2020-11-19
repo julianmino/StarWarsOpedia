@@ -25,6 +25,7 @@
 		844A299225643405003EB3AE /* StarshipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A299125643405003EB3AE /* StarshipsTableViewCell.swift */; };
 		84978F002566BDA400602324 /* DetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84978EFF2566BDA400602324 /* DetailsManager.swift */; };
 		84978F032566BE4C00602324 /* StarshipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84978F022566BE4C00602324 /* StarshipsViewModel.swift */; };
+		84978F072566C40600602324 /* FilmsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84978F062566C40600602324 /* FilmsTableViewCell.xib */; };
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
 		E087AAD623620D0900D1E33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E087AAD523620D0800D1E33E /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		844A299125643405003EB3AE /* StarshipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsTableViewCell.swift; sourceTree = "<group>"; };
 		84978EFF2566BDA400602324 /* DetailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsManager.swift; sourceTree = "<group>"; };
 		84978F022566BE4C00602324 /* StarshipsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarshipsViewModel.swift; sourceTree = "<group>"; };
+		84978F062566C40600602324 /* FilmsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmsTableViewCell.xib; sourceTree = "<group>"; };
 		BE9F74ECC6ADA9E64E221425 /* Pods-StarWarsOpedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsOpedia.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsOpedia/Pods-StarWarsOpedia.debug.xcconfig"; sourceTree = "<group>"; };
 		D2A5F2001F4A9144005CD714 /* StarWarsOpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsOpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A5F2081F4A9144005CD714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				EA3356D825642314006B8FB6 /* FilmsTableViewCell.swift */,
+				84978F062566C40600602324 /* FilmsTableViewCell.xib */,
 				844A299125643405003EB3AE /* StarshipsTableViewCell.swift */,
 				840F46A92565624B006D0B16 /* StarshipsTableViewCell.xib */,
 			);
@@ -303,6 +306,7 @@
 			files = (
 				5394F02521864DF5006E754C /* LaunchScreen.storyboard in Resources */,
 				E087AAD623620D0900D1E33E /* Assets.xcassets in Resources */,
+				84978F072566C40600602324 /* FilmsTableViewCell.xib in Resources */,
 				D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */,
 				840F46AA2565624B006D0B16 /* StarshipsTableViewCell.xib in Resources */,
 			);

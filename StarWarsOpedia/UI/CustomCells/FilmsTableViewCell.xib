@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilmCell" id="rIl-FV-paA" customClass="FilmsTableViewCell" customModule="StarWarsOpedia" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rIl-FV-paA" id="3OH-1D-Ha2">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWP-Wj-OAp">
+                        <rect key="frame" x="16" y="2" width="382" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESS-Zo-b5K">
+                        <rect key="frame" x="16" y="23" width="382" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="CWP-Wj-OAp" firstAttribute="top" secondItem="3OH-1D-Ha2" secondAttribute="top" constant="2" id="5a6-Ho-vuc"/>
+                    <constraint firstAttribute="bottom" secondItem="ESS-Zo-b5K" secondAttribute="bottom" constant="6" id="bft-46-0j6"/>
+                    <constraint firstAttribute="trailing" secondItem="CWP-Wj-OAp" secondAttribute="trailing" constant="16" id="m9o-1y-Esl"/>
+                    <constraint firstItem="ESS-Zo-b5K" firstAttribute="leading" secondItem="3OH-1D-Ha2" secondAttribute="leading" constant="16" id="qHN-0e-G9D"/>
+                    <constraint firstItem="CWP-Wj-OAp" firstAttribute="leading" secondItem="3OH-1D-Ha2" secondAttribute="leading" constant="16" id="qaz-ql-hwR"/>
+                    <constraint firstAttribute="trailing" secondItem="ESS-Zo-b5K" secondAttribute="trailing" constant="16" id="vkn-1e-Hrk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="subtitleLabel" destination="ESS-Zo-b5K" id="6aM-Rf-eWI"/>
+                <outlet property="titleLabel" destination="CWP-Wj-OAp" id="vSi-Tq-Bhd"/>
+            </connections>
+            <point key="canvasLocation" x="154" y="56"/>
+        </tableViewCell>
+    </objects>
+</document>
