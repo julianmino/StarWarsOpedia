@@ -48,8 +48,7 @@ class MainManager: BaseManager {
     AF.request(url).validate().responseDecodable(of: FilmsViewModel.self) { (response) in
       if let error = response.error {
         delegate.onError(message: error.localizedDescription)
-      }
-      else {
+      } else {
         delegate.onFetchFilms(films: response.value?.all)
       }
       delegate.onFinishedService()
@@ -65,8 +64,7 @@ class MainManager: BaseManager {
       
       if let error = response.error {
         delegate.onError(message: error.localizedDescription)
-      }
-      else {
+      } else {
         delegate.onSearchStarships(starships: response.value?.all)
       }
       delegate.onFinishedService()
