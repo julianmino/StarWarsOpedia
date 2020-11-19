@@ -27,3 +27,30 @@
 /// THE SOFTWARE.
 
 import Foundation
+
+class PathBuilder {
+  class var sharedInstance: PathBuilder {
+      struct Static {
+          static let instance = PathBuilder()
+      }
+      return Static.instance
+  }
+  
+  private let commonUrl: String
+  private let films: String
+  private let starships: String
+  
+  init() {
+    commonUrl = "https://swapi.dev/api/"
+    films = "films"
+    starships = "starships"
+  }
+  
+  func getFilmsPath() -> String {
+    return commonUrl + films
+  }
+  
+  func getStarshipsPath() -> String {
+    return commonUrl + starships
+  }
+}

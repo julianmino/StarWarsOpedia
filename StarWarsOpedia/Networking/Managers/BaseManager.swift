@@ -35,5 +35,10 @@ protocol BaseManagerDelegate {
 }
 
 class BaseManager {
+  var delegate: Any?
+  
+  func setDelegate<T>(_ delegate: T?) {
+    self.delegate = delegate
+  }
   
 }

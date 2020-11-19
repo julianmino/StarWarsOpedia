@@ -50,15 +50,11 @@ class MainPresenter {
   }
   
   func getDatasource() {
-    delegate?.onStartService()
     MainManager.sharedInstance.fetchFilms(delegate: self)
-    delegate?.onFinishedService()
   }
   
   func getDataFromSearch(with string:String) {
-    delegate?.onStartService()
     MainManager.sharedInstance.searchStarships(for: string, delegate: self)
-    delegate?.onFinishedService()
   }
 }
 
@@ -66,11 +62,11 @@ class MainPresenter {
 
 extension MainPresenter: MainManagerDelegate {
   func onStartService() {
-    
+    delegate?.onStartService()
   }
   
   func onFinishedService() {
-    
+    delegate?.onFinishedService()
   }
   
   func onError(message: String) {

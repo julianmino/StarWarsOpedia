@@ -28,7 +28,7 @@
 
 import Foundation
 
-struct Starships: Decodable {
+struct StarshipsViewModel: Decodable {
   var count: Int
   var all: [Starship]
   

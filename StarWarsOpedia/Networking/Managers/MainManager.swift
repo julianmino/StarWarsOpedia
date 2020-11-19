@@ -49,7 +49,9 @@ class MainManager: BaseManager {
   
   func fetchFilms(delegate: MainManagerDelegate) {
     delegate.onStartService()
-    AF.request("https://swapi.dev/api/films").validate().responseDecodable(of: FilmsViewModel.self) { (response) in
+    
+    let url = PathBuilder.sharedInstance.getFilmsPath()
+    AF.request(url).validate().responseDecodable(of: FilmsViewModel.self) { (response) in
       if let error = response.error {
         delegate.onError(message: error.localizedDescription)
       }
@@ -71,9 +73,9 @@ class MainManager: BaseManager {
   func searchStarships(for name: String, delegate: MainManagerDelegate) {
     delegate.onStartService()
     
-    let url = "https://swapi.dev/api/starships"
+    let url = PathBuilder.sharedInstance.getStarshipsPath()
     let parameters: [String: String] = ["search": name]
-    AF.request(url, parameters: parameters).validate().responseDecodable(of: Starships.self) { response in
+    AF.request(url, parameters: parameters).validate().responseDecodable(of: StarshipsViewModel.self) { response in
       
       if let error = response.error {
         delegate.onError(message: error.localizedDescription)

@@ -11,7 +11,6 @@
 		5394F02521864DF5006E754C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5394F02321864DF4006E754C /* LaunchScreen.storyboard */; };
 		6B2A81D738A340AD12B54972 /* Pods_StarWarsOpedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4884293E01387DDB245CC1FF /* Pods_StarWarsOpedia.framework */; };
 		8404F57F255EE389000DA4DB /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404F57E255EE389000DA4DB /* Starship.swift */; };
-		8404F585255F07EA000DA4DB /* StarshipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404F584255F07EA000DA4DB /* StarshipsViewModel.swift */; };
 		840A99F0255C44850053E4A8 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A99EF255C44850053E4A8 /* MainPresenter.swift */; };
 		840A99F4255C44D40053E4A8 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A99F3255C44D40053E4A8 /* DetailsPresenter.swift */; };
 		840A99FD255C46930053E4A8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A99FC255C46930053E4A8 /* Enums.swift */; };
@@ -24,6 +23,8 @@
 		840F46DB25657D8D006D0B16 /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F46DA25657D8D006D0B16 /* PathBuilder.swift */; };
 		840F46DE2565842A006D0B16 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F46DD2565842A006D0B16 /* BaseManager.swift */; };
 		844A299225643405003EB3AE /* StarshipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A299125643405003EB3AE /* StarshipsTableViewCell.swift */; };
+		84978F002566BDA400602324 /* DetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84978EFF2566BDA400602324 /* DetailsManager.swift */; };
+		84978F032566BE4C00602324 /* StarshipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84978F022566BE4C00602324 /* StarshipsViewModel.swift */; };
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
 		E087AAD623620D0900D1E33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E087AAD523620D0800D1E33E /* Assets.xcassets */; };
@@ -38,7 +39,6 @@
 		4884293E01387DDB245CC1FF /* Pods_StarWarsOpedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsOpedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5394F02421864DF4006E754C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8404F57E255EE389000DA4DB /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
-		8404F584255F07EA000DA4DB /* StarshipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsViewModel.swift; sourceTree = "<group>"; };
 		840A99EF255C44850053E4A8 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		840A99F3255C44D40053E4A8 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
 		840A99FC255C46930053E4A8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		840F46DA25657D8D006D0B16 /* PathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
 		840F46DD2565842A006D0B16 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
 		844A299125643405003EB3AE /* StarshipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsTableViewCell.swift; sourceTree = "<group>"; };
+		84978EFF2566BDA400602324 /* DetailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsManager.swift; sourceTree = "<group>"; };
+		84978F022566BE4C00602324 /* StarshipsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarshipsViewModel.swift; sourceTree = "<group>"; };
 		BE9F74ECC6ADA9E64E221425 /* Pods-StarWarsOpedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsOpedia.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsOpedia/Pods-StarWarsOpedia.debug.xcconfig"; sourceTree = "<group>"; };
 		D2A5F2001F4A9144005CD714 /* StarWarsOpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsOpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A5F2081F4A9144005CD714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,10 +107,10 @@
 		840A99EA255C43890053E4A8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				84978F022566BE4C00602324 /* StarshipsViewModel.swift */,
 				840A9A10255C6CC60053E4A8 /* FilmsViewModel.swift */,
 				840A9A02255C4FDC0053E4A8 /* Film.swift */,
 				8404F57E255EE389000DA4DB /* Starship.swift */,
-				8404F584255F07EA000DA4DB /* StarshipsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -158,6 +160,7 @@
 			children = (
 				840F46CC25657885006D0B16 /* MainManager.swift */,
 				840F46DD2565842A006D0B16 /* BaseManager.swift */,
+				84978EFF2566BDA400602324 /* DetailsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -358,7 +361,7 @@
 				844A299225643405003EB3AE /* StarshipsTableViewCell.swift in Sources */,
 				840F46CD25657885006D0B16 /* MainManager.swift in Sources */,
 				EA3356D925642315006B8FB6 /* FilmsTableViewCell.swift in Sources */,
-				8404F585255F07EA000DA4DB /* StarshipsViewModel.swift in Sources */,
+				84978F032566BE4C00602324 /* StarshipsViewModel.swift in Sources */,
 				8404F57F255EE389000DA4DB /* Starship.swift in Sources */,
 				840F46DE2565842A006D0B16 /* BaseManager.swift in Sources */,
 				D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */,
@@ -366,6 +369,7 @@
 				840F46D525657BBB006D0B16 /* MainRequest.swift in Sources */,
 				840A9A11255C6CC60053E4A8 /* FilmsViewModel.swift in Sources */,
 				183D953D23DF5A4700845F5F /* Displayable.swift in Sources */,
+				84978F002566BDA400602324 /* DetailsManager.swift in Sources */,
 				840A99FD255C46930053E4A8 /* Enums.swift in Sources */,
 				840F46DB25657D8D006D0B16 /* PathBuilder.swift in Sources */,
 				E087AAD923620E3B00D1E33E /* DetailViewController.swift in Sources */,
