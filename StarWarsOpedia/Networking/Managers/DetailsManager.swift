@@ -30,7 +30,7 @@ import Foundation
 import Alamofire
 
 protocol DetailsManagerDelegate: BaseManagerDelegate {
-  func onFetchStarships(items: [Displayable]?)
+  func onFetchStarships(items: [Displayable])
 }
 class DetailsManager: BaseManager {
   class var sharedInstance: DetailsManager {
@@ -50,8 +50,7 @@ class DetailsManager: BaseManager {
        AF.request(url).validate().responseDecodable(of: T.self) { (response) in
         if let error = response.error {
           delegate.onError(message: error.localizedDescription)
-        }
-        else if let value = response.value {
+        } else if let value = response.value {
            items.append(value)
          }
          fetchGroup.leave()

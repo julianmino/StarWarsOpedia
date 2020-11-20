@@ -36,21 +36,16 @@ class PathBuilder {
       return Static.instance
   }
   
-  private let commonUrl: String
-  private let films: String
-  private let starships: String
-  
-  init() {
-    commonUrl = "https://swapi.dev/api/"
-    films = "films"
-    starships = "starships"
+  private func baseURL() -> String {
+    return "https://swapi.dev/api"
   }
   
   func getFilmsPath() -> String {
-    return commonUrl + films
+    return "\(baseURL())/films"
   }
   
   func getStarshipsPath() -> String {
-    return commonUrl + starships
+    return "\(baseURL())/starships"
   }
+  
 }
