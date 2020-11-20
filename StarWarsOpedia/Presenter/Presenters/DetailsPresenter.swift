@@ -32,15 +32,9 @@ import Alamofire
 protocol DetailsPresenterDelegate: BasePresenterDelegate {
   func getDetailsData()
 }
-class DetailsPresenter {
+class DetailsPresenter<T: DetailsPresenterDelegate>: BasePresenter<T> {
 
-  private var delegate: DetailsPresenterDelegate?
   var selectedValue: Displayable?
-  
-  
-  func setDelegate(_ delegate: DetailsPresenterDelegate?) {
-    self.delegate = delegate
-  }
   private var _datasource = [Displayable]()
   var datasource: [Displayable] {
     return _datasource

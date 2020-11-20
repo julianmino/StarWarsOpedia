@@ -29,7 +29,7 @@
 import UIKit
 import SVProgressHUD
 
-class DetailViewController: UIViewController {
+class DetailsViewController: UIViewController {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var subtitleLabel: UILabel!
   @IBOutlet weak var item1TitleLabel: UILabel!
@@ -44,14 +44,14 @@ class DetailViewController: UIViewController {
   var data: Displayable?
   
   private var listData: [Displayable] = []
-  private var presenter = DetailsPresenter()
+  private var presenter = DetailsPresenter<DetailsViewController>()
   override func viewDidLoad() {
     super.viewDidLoad()
     listTableView.register(UINib(nibName: "FilmsTableViewCell", bundle: nil), forCellReuseIdentifier: "FilmCell")
     commonInit()
     
     listTableView.dataSource = self
-    presenter.setDelegate(self)
+    presenter.attach(self)
     presenter.selectedValue = data
     presenter.getDatasource()
   }
@@ -77,7 +77,7 @@ class DetailViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension DetailViewController: UITableViewDataSource {
+extension DetailsViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return presenter.datasource.count
   }
@@ -103,7 +103,7 @@ extension DetailViewController: UITableViewDataSource {
 
 //MARK: - DetailsPresenterDelegate
 
-extension DetailViewController: DetailsPresenterDelegate {
+extension DetailsViewController: DetailsPresenterDelegate {
   
   func showLoadingView() {
     SVProgressHUD.show()

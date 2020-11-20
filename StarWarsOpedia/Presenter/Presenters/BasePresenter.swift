@@ -33,3 +33,11 @@ protocol BasePresenterDelegate {
   func hideLoadingView()
   func onError(_ message: String)
 }
+
+class BasePresenter<T: BasePresenterDelegate> {
+  internal var delegate: T?
+  
+  func attach(_ view: T) {
+    delegate = view
+  }
+}

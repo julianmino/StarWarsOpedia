@@ -31,17 +31,8 @@ import Foundation
 protocol MainPresenterDelegate: BasePresenterDelegate {
   func getMainData()
 }
-class MainPresenter {
-
-  private var delegate: MainPresenterDelegate?
+class MainPresenter<T: MainPresenterDelegate>: BasePresenter<T> {
   
-  init() {
-    
-  }
-  
-  func setDelegate(_ delegate: MainPresenterDelegate?) {
-    self.delegate = delegate
-  }
   private var _datasource = [Displayable]()
   var datasource: [Displayable] {
     return _datasource

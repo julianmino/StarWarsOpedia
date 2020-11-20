@@ -32,7 +32,7 @@ import SVProgressHUD
 class MainTableViewController: UITableViewController {
   @IBOutlet weak var searchBar: UISearchBar!
   
-  private var presenter = MainPresenter()
+  private var presenter = MainPresenter<MainTableViewController>()
 
   override func viewWillAppear(_ animated: Bool) {
   }
@@ -42,7 +42,7 @@ class MainTableViewController: UITableViewController {
     SVProgressHUD.setBackgroundColor(.black)
     SVProgressHUD.setForegroundColor(.white)
     searchBar.delegate = self
-    presenter.setDelegate(self)
+    presenter.attach(self)
     presenter.getDatasource()
   }
   
@@ -75,7 +75,7 @@ class MainTableViewController: UITableViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let destinationVC = segue.destination as? DetailViewController, let item = sender as? Displayable {
+    if let destinationVC = segue.destination as? DetailsViewController, let item = sender as? Displayable {
       destinationVC.data = item
     }
   }
